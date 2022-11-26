@@ -12,10 +12,12 @@ $addImageButton.addEventListener('click', () => {
   if (url) {
     imageUrls.push(url);
     $imageUrlInput.value = '';
+    updateGallery();
   }
 });
 
 function updateGallery() {
+  $gallery.innerHTML = '';
   imageUrls.forEach((_, ind) => {
     const $imageElement = document.createElement('img');
     $imageElement.classList.add('gallery-image');
