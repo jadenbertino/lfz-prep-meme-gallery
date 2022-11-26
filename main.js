@@ -18,12 +18,13 @@ $addImageButton.addEventListener('click', () => {
 
 function updateGallery() {
   $gallery.innerHTML = '';
-  imageUrls.forEach((_, ind) => {
+  // indexing backwards so new images appear at top
+  for (let i = imageUrls.length - 1; i >= 0; i--) {
     const $imageElement = document.createElement('img');
     $imageElement.classList.add('gallery-image');
-    $imageElement.src = imageUrls[ind];
+    $imageElement.src = imageUrls[i];
     $gallery.appendChild($imageElement);
-  });
+  }
 }
 
 updateGallery();
